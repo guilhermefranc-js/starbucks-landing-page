@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden; /* Impede a rolagem de tela no desktop */
+}
+
+.logo {
+    margin-top: 20px;
+    margin-left: 100px;
+    width: 60px;
+    height: 60px;
+}
+
+.slogan {
+    color: #444;
+    font-size: 40px;
+    width: 360px;
+    text-align: start;
+    margin-top: 150px;
+    margin-left: 100px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+span {
+    display: inline-block;
+    font-family: 'Arial Black', Helvetica, sans-serif;
+    color: #017143;
+    font-size: 50px;
+    font-weight: 800;
+}
+
+.subtitulo {
+    margin-top: -10px;
+    margin-left: 100px;
+    text-align: start;
+    width: 400px;
+    color: #444;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+.botaoverde {
+    margin-top: 10px;
+    margin-left: 110px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    font-size: 12px;
+    background-color: rgba(50, 102, 65, 0);
+    border: rgba(0, 0, 0, 0.507) solid 0.5px;
+    border-radius: 11px;
+    height: 26px;
+    width: 120px;
+    transition: background-color 0.3s, transform 0.3s ease-in-out;
+}
+
+.botaoverde:hover {
+    background-color: rgba(141, 141, 141, 0.171);
+    transform: scale(0.95);
+}
+
+.bebidas {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.bebidas img {
+    height: 80px;
+    width: auto;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.bebidas img:hover {
+    transform: translateY(-15px);
+}
+
+#circulo {
+    background-color: rgb(226, 55, 183);
+    border-radius: 50%;
+    width: 900px;
+    height: 900px;
+    position: absolute;
+    margin-left: 1050px;
+    margin-top: -300px;
+    overflow: visible;
+}
+
+#circulo img {
+    height: 600px;
+    margin-top: 60px;
+    margin-left: 80px;
+    transition: transform 0.3s ease;
+}
+
+#circulo img:hover {
+    transform: translateX(-15px);
+}
+
+/* ANIMAÇÃO DE ENTRADA DO COPO GRANDE */
+@keyframes slideIn { 
+  0% { /* Início da animação */
+    opacity: 0;
+    transform: translateX(50px); /* Começa mais à direita, como antes (ou pode ser 0) */
+  }
+  50% { /* Meio da animação, onde ele passa um pouco do ponto final */
+    opacity: 1; /* Já visível */
+    transform: translateX(-15px); /* Move 5px para a esquerda do centro */
+  }
+  100% { /* Fim da animação, volta para a posição final */
+    opacity: 1; /* Continua visível */
+    transform: translateX(0); /* Volta para a posição original */
+  }
+}
+
+#circulo img.animate {
+  animation: slideIn 0.4s ease-in-out; /* Aumentei a duração para 0.4s para dar tempo do -15px */
+}
+#circulo img.animate {
+    animation: slideIn 0.3s ease-out;
+}
+
+/* =========================================== */
+/* REGRAS PARA TELAS PEQUENAS (RESPONSIVO)     */
+/* =========================================== */
+
+@media (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+
+    .logo, .slogan, .subtitulo, .botaoverde {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 90%;
+    }
+
+    .logo {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .slogan {
+        margin-top: 0;
+        font-size: 32px;
+    }
+
+    span {
+        font-size: 40px;
+    }
+
+    .subtitulo {
+        width: 80%;
+    }
+
+    #circulo {
+        position: relative;
+        width: 320px;
+        height: 320px;
+        margin: 40px auto;
+        top: auto;
+        left: auto;
+    }
+
+    #circulo img {
+        height: 280px;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .bebidas {
+        position: relative;
+        bottom: auto;
+        left: auto;
+        transform: none;
+        justify-content: center;
+        width: 100%;
+        padding: 20px 0;
+    }
+}
