@@ -10,4 +10,5 @@ Projeto de uma landing page interativa da Starbucks, desenvolvido para praticar 
 
 ## 🚀 Deploy
 
-Você pode visualizar o projeto ao vivo através do link abaixo:
+Você pode visualizar o projeto abaixo:
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/83541c27-fbb0-4c83-8697-960f47d2b148" />
